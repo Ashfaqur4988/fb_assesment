@@ -12,6 +12,7 @@
   "dependencies": {
     "@xyflow/react": "^12.3.5",
     "axios": "^1.7.8",
+    "fb_assesment": "file:..",
     "lucide-react": "^0.460.0",
     "nanoid": "^5.0.8",
     "react": "^18.3.1",

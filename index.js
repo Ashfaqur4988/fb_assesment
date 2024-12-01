@@ -8,9 +8,11 @@ import leadsRouter from "./routes/leads.route.js";
 import emailTemplateRouter from "./routes/emailTemplate.route.js";
 import flowChartRouter from "./routes/flowChart.route.js";
 import scheduleMailRouter from "./routes/scheduleMail.route.js";
+import path from "path";
 
 dotenv.config();
 const app = express();
+const __dirname = path.resolve();
 app.use(cookieParser());
 app.use(express.json());
 app.use(
@@ -26,9 +28,13 @@ app.use("/api/email-template", emailTemplateRouter);
 app.use("/api/flowchart", flowChartRouter);
 app.use("/api/schedule-mail", scheduleMailRouter);
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+if (process.env.NODE_ENV !== "development") {
+  app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+  });
+}
 
 app.listen(8080, () => {
   console.log("App listening on port 8080!");
