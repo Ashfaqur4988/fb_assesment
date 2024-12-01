@@ -65,6 +65,7 @@ export const scheduleMail = async (req, res) => {
       delay,
       waitType,
       senderEmail,
+      message: "Email scheduled successfully",
     });
   } catch (error) {
     res.status(500).json({ error: error.message });

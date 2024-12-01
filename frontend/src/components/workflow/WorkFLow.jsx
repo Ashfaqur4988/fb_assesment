@@ -22,6 +22,7 @@ import CustomEdge from "../edges/CustomEdge";
 import { useNodeStore } from "../../store/useNodeStore";
 import { Toaster } from "react-hot-toast";
 
+//registering nodes
 const nodeTypes = {
   addLeadSource: AddLeadSource,
   sequenceStartPoint: SequenceStartPoint,
@@ -31,11 +32,12 @@ const nodeTypes = {
   delayNode: DelayNode,
 };
 
+// registering edges
 const edgeTypes = {
   customEdge: CustomEdge,
 };
 export const WorkFLow = () => {
-  const { scheduleMail, loading } = useNodeStore();
+  const { scheduleMail, loading } = useNodeStore(); //getting data from store
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
