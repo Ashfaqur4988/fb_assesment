@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Register = () => {
   const navigate = useNavigate();
   const { signup } = useAuthStore();
   const [formData, setFormData] = useState({
@@ -84,4 +84,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Register;

@@ -6,7 +6,7 @@ import Login from "./pages/Login";
 import { useAuthStore } from "./store/useAuthStore";
 import { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
-import Signup from "./pages/signup";
+import Register from "./pages/Register";
 
 function App() {
   const { user, checkingAuth, checkAuth } = useAuthStore();
@@ -21,7 +21,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={!user ? <Login /> : <WorkFlowPage />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<h1>404</h1>} />
         </Routes>
