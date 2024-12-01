@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import axios from "../lib/axios";
+import { toast } from "react-hot-toast";
 
 export const useNodeStore = create((set) => ({
   allNodes: [],
@@ -20,6 +21,7 @@ export const useNodeStore = create((set) => ({
       const response = await axios.post("/schedule-mail/", { nodes });
       console.log(response.data);
       set({ loading: false });
+      toast.success("Mail scheduled successfully");
     } catch (error) {
       set({ loading: false });
       console.log(error);

@@ -73,13 +73,13 @@ export const ColdEmailNode = ({ data, id }) => {
         <div className="absolute top-1/2 right-2 transform -translate-y-1/2 flex flex-col gap-2">
           <button
             className="bg-blue-500 text-white p-1 rounded-full hover:bg-blue-600"
-            onClick={handleClick}
+            onClick={handleEdit}
           >
             <Edit size={16} />
           </button>
           <button
             className="bg-red-500 text-white p-1 rounded-full hover:bg-red-600"
-            onClick={handleEdit}
+            onClick={handleClick}
           >
             <Trash size={16} />
           </button>
@@ -117,13 +117,13 @@ export const DelayNode = ({ data, id }) => {
         <div className="absolute top-1/2 right-2 transform -translate-y-1/2 flex flex-col gap-2">
           <button
             className="bg-blue-500 text-white p-1 rounded-full hover:bg-blue-600"
-            onClick={handleClick}
+            onClick={handleEdit}
           >
             <Edit size={16} />
           </button>
           <button
             className="bg-red-500 text-white p-1 rounded-full hover:bg-red-600"
-            onClick={handleEdit}
+            onClick={handleClick}
           >
             <Trash size={16} />
           </button>

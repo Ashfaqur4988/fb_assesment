@@ -20,6 +20,7 @@ import AddBlock from "../nodes/AddBlock";
 import { ColdEmailNode, DelayNode, LeadSourceNode } from "../nodes/InputNode";
 import CustomEdge from "../edges/CustomEdge";
 import { useNodeStore } from "../../store/useNodeStore";
+import { Toaster } from "react-hot-toast";
 
 const nodeTypes = {
   addLeadSource: AddLeadSource,
@@ -88,6 +89,7 @@ export const WorkFLow = () => {
         <NodeToolbar />
         <NodeResizer />
       </ReactFlow>
+      <Toaster />
     </div>
   );
 };
